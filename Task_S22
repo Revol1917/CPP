@@ -1,0 +1,32 @@
+#include <iostream>
+#include <clocale>
+#include <fstream>
+#include <string>
+
+int main() {
+
+    setlocale(0, "Russian");
+
+    int A, B;
+    std::cout << "Введите 2 числа (2 больше 1)" << std::endl;
+    std::cin >> A >> B;
+
+    std::ofstream file("output.txt");
+    while (A < B) {
+        file << "A = " << A*3 << std::endl;
+        A++;
+    }
+    file.close();
+
+    std::ifstream fin("output.txt");
+    std::string line;
+    int linenum = 0;
+
+    while (std::getline(fin, line)) {
+        linenum++;
+        std::cout << linenum << ". " << line << std::endl;
+    }
+    fin.close();
+
+    return 0;
+}
