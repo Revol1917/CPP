@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int i, sum = 0;
+
+int main()
+{
+    while (i < 1000) {
+        if (i%7 == 0) {
+            sum = sum + i;
+        }
+        i = i + 4;
+    }
+    cout << sum << endl;
+    return 0;
+}
