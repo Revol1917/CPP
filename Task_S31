@@ -1,0 +1,41 @@
+#include <iostream>
+#include <clocale>
+#include <fstream>
+#include <string>
+
+int main() {
+    setlocale(0, "Russian");
+
+    int A;
+    std::cout << "Введите номер строки: ";
+    std::cin >> A;
+
+    std::ifstream fin("output.txt");
+
+    std::string line;
+    int linenum = 0;
+
+    while (std::getline(fin, line)) {
+        if (linenum == A) {
+            std::cout << "Строка " << A << ": " << line << std::endl;
+            break;
+        }
+        linenum++;
+    }
+
+    fin.close();
+    return 0;
+}
+
+//
+0. Ноль
+1. Один
+2. Два
+3. Три
+4. Четыре
+5. Пять
+6. Шесть
+7. Семь
+8. Восемь
+9. Девять
+//
