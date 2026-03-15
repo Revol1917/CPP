@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int aint = 10;
+    float bfloat = 3.2;
+    double cdouble = 2.7565765764;
+    char dchar = 'A';
+
+    cout << "int + char = " << aint + dchar << endl;
+    cout << "float - double = " << bfloat - cdouble << endl;
+    cout << "int * float = " << aint * bfloat << endl;
+    cout << "double / int = " << cdouble / aint << endl;
+
+    return 0;
+}
