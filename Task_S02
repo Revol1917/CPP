@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int per1 = 17;
+    int per2 = 5;
+
+    int full = per1 / per2;
+    int part = per1 % per2;
+
+    cout << per1 << " / " << per2 << " = " << full << " целочисленное " << endl;
+    cout << per1 << " % " << per2 << " = " << part << " остаток " << endl;
+
+    float perfloat1 = 7.4564;
+    float perfloat2 = 2.4656;
+
+    float fullfloat = per1 / per2;
+    float partfloat = per1 % per2;
+
+    cout << perfloat1 << " / " << perfloat2 << " = " << fullfloat << " целочисленное с точкой" << endl;
+    cout << perfloat1 << " % " << perfloat2 << " = " << partfloat << " остаток с точкой " << endl;
+
+    int perminus1 = -17;
+    int perminus2 = 5;
+
+    int fullminus = perminus1 / perminus2;
+    int partminus = perminus1 % perminus2;
+
+    cout << perminus1 << " / " << perminus2 << " = " << fullminus << " целочисленное минус " << endl;
+    cout << perminus1 << " % " << perminus2 << " = " << partminus << " остаток минус " << endl;
+
+    return 0;
+}
