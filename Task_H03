@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+bool est_odinakovye_cifry(int chislo) {
+
+    bool vstrechalis[10] = {false};
+    while (chislo > 0) {
+        int cifra = chislo % 10;
+        if (vstrechalis[cifra]) {
+            return true;
+        }
+        vstrechalis[cifra] = true;
+        chislo = chislo / 10;
+    }
+    return false;
+}
+
+
+int same_chislo(int from, int to) {
+
+    int schetchik = 0;
+    for (int i = from; i <= to; i++) {
+        if (est_odinakovye_cifry(i)) {
+            cout << i << " ";
+            schetchik++;
+        }
+    }
+    cout << endl;
+    cout << "Всего: " << schetchik << endl;
+    return schetchik;
+}
+
+
+int main() {
+
+    setlocale(0, "Russian");
+    int a, b;
+    cin >> a;
+    cin >> b;
+    cout << same_chislo(a, b) << endl;
+    return 0;
+}
