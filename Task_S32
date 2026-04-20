@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>  // strlen
+
+using namespace std;
+
+int main() {
+    setlocale(0, "Russian");
+    char stroka[100];
+
+    cout << "Введи строку: ";
+    cin.getline(stroka, 100);
+
+    char* ukaz = stroka;
+
+    int dlina = strlen(stroka);
+
+    for (int i = 0; i < dlina; i++) {
+        if (*ukaz >= 'a' && *ukaz <= 'z') {
+            if (*ukaz == 'z')
+                *ukaz = 'a';
+            else
+                *ukaz = *ukaz + 1;
+        }
+        else if (*ukaz >= 'A' && *ukaz <= 'Z') {
+            if (*ukaz == 'Z')
+                *ukaz = 'A';
+            else
+                *ukaz = *ukaz + 1;
+        }
+        ukaz++;
+    }
+
+    cout << "После сдвига: " << stroka << endl;
+
+    return 0;
+}
