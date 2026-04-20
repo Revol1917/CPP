@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>   // tan()
+
+using namespace std;
+
+double ploshad_n_ugolnika(double A, int N) {
+    double tg = tan(3.141 / N);
+    double ploshad = (N * A * A) / (4.0 * tg);
+    return ploshad;
+}
+
+int main() {
+    setlocale(0, "Russian");
+    cout << "Введите длину и кол-во сторон" << endl;
+    int a, b;
+    cin >> a;
+    cin >> b;
+    cout << "Площадь: " << ploshad_n_ugolnika(a, b) << endl;
+    return 0;
+}
