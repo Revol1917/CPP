@@ -12,9 +12,9 @@ double ploshad_n_ugolnika(double A, int N) {
 int main() {
     setlocale(0, "Russian");
     cout << "Введите длину и кол-во сторон" << endl;
-    int a, b;
+    int a, n;
     cin >> a;
-    cin >> b;
-    cout << "Площадь: " << ploshad_n_ugolnika(a, b) << endl;
+    cin >> n;
+    cout << "Площадь: " << ploshad_n_ugolnika(a, n) << endl;
     return 0;
 }
