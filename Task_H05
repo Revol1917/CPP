@@ -1,0 +1,48 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+pair<float, float> usain_run(float V, int N) {
+    float speed = V;
+    for (int i = 1; i < N; ++i) speed *= 0.95f;
+    float time = 0.0f, cur = V;
+    for (int i = 0; i < N; ++i) {
+        time += 0.5f / cur;
+        cur *= 0.95f;
+    }
+    return {speed, time};
+}
+
+int main() {
+    setlocale(0, "Russian");
+    const float limit = 4.0f;
+   // 1 часть
+    float V1 = 40.0f;
+    int laps1 = 0;
+    float s = V1;
+    while (s >= limit) {
+            laps1++; s *= 0.95f;
+    }
+    auto [sp1, total_time] = usain_run(V1, laps1);
+    // 2 часть
+    float V2 = 35.0f;
+    int laps2 = 0;
+    float t_sum = 0.0f, cur2 = V2;
+    while (true) {
+        float lap_time = 0.5f / cur2;
+        if (t_sum + lap_time > total_time) break;
+        t_sum += lap_time;
+        laps2++;
+        cur2 *= 0.95f;
+    }
+
+    cout << fixed << setprecision(3);
+
+    cout << "| Старт (км/ч) | Условие остановки       | Круги | Время (ч) |\n";
+    cout << "| " << setw(12) << V1 << " | до скорости < 4 км/ч    | "
+         << setw(5) << laps1 << " | " << setw(9) << total_time << " |\n";
+    cout << "| " << setw(12) << V2 << " | за время " << setw(9) << total_time << " ч    | "
+         << setw(5) << laps2 << " | " << setw(9) << t_sum << " |\n";
+
+    return 0;
+}
