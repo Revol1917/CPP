@@ -17,7 +17,7 @@ bool est_odinakovye_cifry(int chislo) {
 }
 
 
-int same_chislo(int from, int to) {
+int same_digits(int from, int to) {
 
     int schetchik = 0;
     for (int i = from; i <= to; i++) {
@@ -38,6 +38,6 @@ int main() {
     int a, b;
     cin >> a;
     cin >> b;
-    cout << same_chislo(a, b) << endl;
+    cout << same_digits(a, b) << endl;
     return 0;
 }
